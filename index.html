@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Story template</title>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-rendering: optimizeLegibility;
+            background-color: #0f0f0f;
+            color: #F5F5F5;
+        }
+
+        .content {
+            max-width: 640px;
+            margin: auto;
+        }
+
+        .header {
+            padding: 0;
+            font-size: 1rem;
+        }
+
+        a {
+            color: black;
+        }
+
+        .footer {
+            background: #D4D7D9;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 4em;
+            padding: 4em 0;
+        }
+
+        figure {
+            margin: 0;
+            padding-bottom: 1.2em;
+            aspect-ratio: 16/9;
+        }
+
+        figcaption {
+            font-size: 0.8em;
+            text-align: left;
+            margin-top: 0.2em;
+            margin-left: 0.5em;
+            margin-bottom: 0em;
+            color: #666;
+        }
+
+        h1 {
+            font-family: 'Lora', Georgia, serif;
+            font-weight: bold;
+            font-size: 3em;
+            line-height: 1.1;
+        }
+
+        .subhead {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1rem;
+        }
+
+        .byline {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        iframe,
+        img,
+        video {
+            max-width: 100%;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        ul {
+            margin: 0;
+            padding-bottom: 1em;
+            line-height: 1.6;
+        }
+
+        iframe {
+            padding-bottom: 1.2em;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            background: #fffbaf;
+            font-size: 0.85em;
+        }
+
+        .full-width figure {
+            text-align: center;
+        }
+
+        /* margin on mobile */
+        @media (max-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+
+            .content {
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+            }
+        }
+    </style>
+
+    <style>
+    .with-image-bg {
+        background-position: center ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-bottom: 0.2em;
+
+            width: 100%;
+            aspect-ratio: 16/9;
+            position: relative;
+
+            /* Center everything inside */
+            min-height: 50svh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* White text with a shadow */
+            color: white;
+            text-shadow: 0px 0px 30px black,
+                0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .with-image-bg {
+            background-image: url('doc/記録的豪雨で冠水した高速道路を走るバスや乗り捨てられた乗用車（2日、ニューヨーク市）=ロイター.png');
+        }
+
+        .title-box {
+            position:absolute;
+            bottom:20px;
+            left:5%;
+        }
+    
+        .full-width {
+            width:100vw;
+            margin-left:calc(50% - 50vw);
+        }
+
+        .full-width img{
+            width:100%;
+            max-height: auto;
+            display:block;
+        }
+        .full-width iframe{
+            width:100%;
+            height:600px;
+            border:none;
+        }
+
+        .subhead {
+            font-size: 1.5rem;
+        }
+
+        .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: palevioletred;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 2rem;
+        max-width: 400px;
+        border-radius: 8px;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+
+      .modal button {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+      }
+
+    .portrait img {
+      width: 70%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      
+    }
+
+    .scrolly-container {
+    position: relative;
+    margin-bottom: 1.2em;
+    }
+
+    .sticky-thing {
+    position: sticky;
+    top: 0;
+
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: visible;
+    background: #0f0f0f;
+    color: #F5F5F5;
+}
+
+.sticky-thing > img {
+    width: 100vw;
+    max-width: 20000px;
+    height: 95vh;
+    
+    object-fit: contain;
+    display: block;
+}
+
+    .sticky-thing iframe {
+    position: absolute;
+    top: 0;
+    max-width: 100%;
+    min-height: 100vh;
+    }
+
+    .steps-container {
+    transform: translate3d(0,0,0);
+    position: relative;
+    padding: 0;
+    z-index: 10;
+    max-width: 35rem;
+    margin: 0 auto;
+    padding-bottom: 4em;
+    }
+
+    .step {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50svh;
+    transform: translate(0px, 0px);
+    }
+
+    .step p {
+    text-align: left;
+    }
+
+    .step p:last-child {
+    padding: 0;
+    }
+
+    .step > * {
+    width: 700px;
+    margin-left: 1.3em;
+    margin-right: 1.3em;
+    text-align: center;
+    padding: 1.4em !important;
+    background: rgba(20,20,20,0.85) !important;
+    color: #F5F5F5;
+    border-left: 4px solid #d94841;
+    }
+
+    .sticky-thing > canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;  
+    }
+
+/* When it's less than 700 pixels wide, do normal scrollytelling */
+
+    @media only screen and (min-width: 700px) {
+    .scrolly-container.side-by-side {
+        display: flex;
+    }
+
+    .scrolly-container.side-by-side>div {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 0.75em;
+    }
+
+    .scrolly-container.side-by-side .scrolly-overlay {
+        margin-top: 70vh;
+        order: 0;
+        /* Change these to adjust sizing options */
+        min-width: 15rem;
+        max-width: 20rem;
+    }
+
+    .scrolly-container.side-by-side .sticky-thing {
+        order: 1;
+        flex-grow: 2;
+    
+    .step{
+      margin-bottom: 25svh;
+    }
+    }
+}
+    </style>
+		<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+    </style>
+</head>
+
+<body>
+    <div class="header with-image-bg">
+        <div class="title-box">
+        </div>
+    </div>
+    <figcaption>Heavy rains caused by Harry Ken Aida flooded many streets in New York City. September 2, 2021, Reuters
+      </figcaption>
+    <div class="content">
+        <div class="header">
+        <h1>78 Illegal Basement Apartments in Flood-Prone Areas of New York</h1></div>
+        <p class="subhead">Five Years After Hurricane Ida, Which Claimed 11 Lives</p>
+        <div class="byline">
+            <p>By Kunihiro Iwasaki</p>
+        </div>
+        <p>“NO CREDIT? NO PROBLEM!”</p>
+        <p>“Very reasonable price. Must see!”</p>
+        <p>When you browse rental listings on Craigslist, one of the largest local classifieds sites in the U.S., you’ll see phrases like these. 
+          All of these listings are for properties in Queens, in eastern New York. The first is a one-bedroom unit with a monthly rent of $1,200, and the second is a two-bedroom unit at $1,800 per month—both below the local market rate.</p>
+     <div class="figure">
+        <figure>
+        <img src="doc/property_information_1_2.png">
+        <img src="doc/property_information_2.png">
+        <div class="figcaption">
+        <figcaption>Craigslist's real estate listings include properties with basements (screenshot)</figcaption>
+        </div>
+        </figure>
+        </div>
+      <p>What these two listings have in common is the word “basement.” This refers to so-called basement apartments.
+         In New York City, such units are considered a violation of city ordinances unless they meet certain safety and health standards regarding evacuation routes, ventilation, and natural light. 
+         This is because they pose risks during disasters.</p>
+      <p>In fact, many lives have been lost as a result. During Hurricane Ida in September 2021, which caused extensive damage in New York, 11 people are believed to have drowned in such basement apartments in areas such as Queens. 
+        It is thought they were unable to escape in time when water flooded in.</p>
+      <div class="figure">
+        <figure>
+        <img src="doc/illegal_basements_all_2.png">
+        </figure>
+      </div>
+      <p>It has been nearly five years since Ida. An analysis of open data from New York City’s Department of Housing Preservation and Development (HPD) revealed that 1,653 basement apartments were found to be in violation of regulations since Ida alone. 
+        This indicates that many residents are still living in basements with poor safety standards. </p>
+      <div class="flourish-embed flourish-chart" data-src="visualisation/29767934?1501741">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+        <noscript><img src="https://public.flourish.studio/visualisation/29767934/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+      <p>By borough, Queens had the highest share at 43 percent. It was followed by Brooklyn and the Bronx.</p>
+      <div class="flourish-embed flourish-chart" data-src="visualisation/29768259?1501741">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+        <noscript><img src="https://public.flourish.studio/visualisation/29768259/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+      <p>What would happen if a hurricane on the scale of Ida were to strike New York again? 
+        I overlaid the locations of the 1,653 illegal basements onto the flood hazard maps published by the City of New York. </p>
+
+    <section id="scrolly-images" class="scrolly-container">
+    <div class="sticky-thing">
+      <img src="doc/flood_current_2.png">
+    </div>
+    <div class="steps-container">
+      <div class="step" id="step1">
+        <div>
+          <p>The results revealed that 78 of these illegal basements are located in areas projected to flood at current sea levels.</p>
+        </div>
+      </div>
+      <div class="step" id="step2">
+        <p>According to flood projections for 2050—when sea levels are expected to rise by up to 2.5 feet—103 buildings will fall within the flood zone.</p>
+      </div>
+      <div class="step" id="step3">
+        <p>By 2080, when a 4.8 feet rise in sea level is projected, that number will reach 547.</p>
+      </div>
+    </div>
+    </section>
+    
+    <p>It is certain that disaster risks will increase significantly in the future due to sea-level rise caused by climate change.</p>
+    <div class="figure">
+      <figure>
+       <img src="doc/flushing.JPG">
+       <figcaption>Main Street in Flushing is lined with many Chinese-owned shops, giving it the feel of Chinatown. Queens, photo by Kunihiro Iwasaki</figcaption>
+      </figure>
+    </div>
+    <p>Flushing, in Queens, is home to a large Asian population. After walking north along the main street lined with Chinese restaurants and grocery stores, I saw the apartment about five minutes later. 
+      It is located in an area expected to flood even at current sea levels.</p>
+    <p>“Discontinue use of rooms for living, disconnect plumbing fixtures where illegal and properly seal pipe connections at wash basin, 
+      water closet, shower stall, and residential sink at illegal class ''a'' apartment created at cellar.”</p>
+    <div>
+      <figure>
+        <img src="doc/illegal_basement_photo_2.JPG">
+        <figcaption>At first glance, illegal basements look like ordinary apartments. Queens, photo by Kunihiro Iwasaki</figcaption>
+      </figure>
+    </div>
+    <p>The City of New York made this recommendation following an inspection in January of this year. At first glance, it looks like an ordinary residence; you wouldn’t suspect it’s an illegal basement.</p>
+    <p>What is the actual situation regarding these illegal basements? Using generative AI (GPT-5.4-mini), I classified the 1,653 violations confirmed by the City of New York into four levels of severity: “critical,” “high,” “middle,” and “low.” 
+      The criteria for classification were based on the facilities installed inside the units and the condition of the construction work. A reporter also verified the classification results.</p>
+    <div class="flourish-embed flourish-chart" data-src="visualisation/29779167?1501741">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript><img src="https://public.flourish.studio/visualisation/29779167/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+    <p>The results showed that 16% were classified as “critical,” involving practices such as installing plumbing behind walls or under floors. Violations classified as “high”—such as the installation of complete bathroom units including toilets, sinks, and showers—accounted for 12%. 
+      These particularly egregious cases, which were designed with long-term occupancy in mind, totaled approximately 30% of the total.</p>
+    <p>The driving force behind the persistence of illegal basements is soaring rent. Looking at the median real total rent—adjusted for inflation—Manhattan saw a 17% increase from 2012 to $2,251 in 2023. 
+      In Queens, the figure was $1,948, a 13% increase, while in Brooklyn, it was $1,829, a 20% increase.</p>
+    <div class="flourish-embed flourish-chart" data-src="visualisation/29769235?1501741">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript><img src="https://public.flourish.studio/visualisation/29769235/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+    <p>New York City is also taking measures. In November 2025, Mayor Eric Adams announced his intention to create a program to legalize illegal basements—excluding those in flood-prone areas—if they meet safety standards. 
+      The goal is to allow residents to continue living there once legalized and to urgently secure housing for citizens.</p>
+    <p>However, with New York’s apartment vacancy rate at just 1.4%(2023), the supply-demand situation remains tight. 
+      Rising living costs are compounding the problem, contributing to the fact that many people—particularly those living in poverty and immigrants—are still being forced into illegal basements.</p>
+    <div class="flourish-embed flourish-chart" data-src="visualisation/29799740?1501741">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript><img src="https://public.flourish.studio/visualisation/29799740/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+    <p>If another major disaster were to strike, it would inevitably put people’s lives at risk. 
+      If people are still forced to live in illegal basements despite this reality, there is nothing more tragic.</p>
+
+ 
+</div>
+     <div class="footer">
+        <div class="content">
+            <p>GitHub repository is <a href="https://github.com/Kunihiro-Iwasaki/Project2.git">here</a>.</p>
+        </div>
+    </div>
+<script>
+    /*************
+    
+    This is the JavaScript that makes the scrolly work 
+    
+    *************/
+
+    /* 
+    This part attaches a scroll to the element with id="scrolly-images"    
+    */
+    (() => {
+      const scroller = scrollama()
+
+      scroller
+        .setup({
+          parent: document.querySelector("#scrolly-images"),
+          step: ".step",
+          offset: 0.6,
+          debug: false,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", { detail: { direction: direction } })
+          if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+            element.previousElementSibling.dispatchEvent(event)
+          }
+        })
+
+      window.addEventListener("resize", scroller.resize)
+    })()
+
+    /*
+    This part sets up your actions. In this case, it's changing the image in the scrolly container.
+    */
+    d3.select("#step1").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "doc/flood_current_2.png")
+    })
+
+    d3.select("#step2").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "doc/flood_2050_2.png")
+    })
+
+    d3.select("#step3").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "doc/flood_2080_2.png")
+    })
+
+  </script>
+  <style>
+    /* Change this to adjust the padding between steps */
+    .step {
+      margin-bottom: 70vh;
+    }
+  </style>
+
+</body>
+
+</html>
