@@ -35,6 +35,36 @@
         a {
             color: black;
         }
+        
+        .methodology{
+          max-width: 800px;
+          margin: 8rem auto;
+          padding: 0 2rem;
+          font-family: sans-serif;
+          line-height: 1.6;
+          background: #0f0f0f;
+          color: #F5F5F5;
+        }
+
+        .methodology-line {
+          width: 240px;
+          height: 2px;
+          background: #F5F5F5;
+          margin-bottom: 3rem;
+        }
+
+        .methodology h2 {
+          font-size: 1rem;
+          font-weight: 700;
+          margin-bottom: 2rem;
+        }
+
+        .methodology p {
+          font-size: 0.8rem;
+          color: #F5F5F5;
+          margin-bottom: 0.1rem;
+        }
+
 
         .footer {
             background: #D4D7D9;
@@ -64,9 +94,16 @@
         h1 {
             font-family: 'Lora', Georgia, serif;
             font-weight: bold;
-            font-size: 3em;
-            line-height: 1.1;
+            font-size: 3rem;
+            line-height: 1.05;
         }
+
+       @media (max-width: 700px) {
+        h1 {
+          font-size: 2rem;
+          line-height: 1.05;
+        }
+       }
 
         .subhead {
             font-family: 'Lora', Georgia, serif;
@@ -337,7 +374,7 @@
         <div class="title-box">
         </div>
     </div>
-    <figcaption>Heavy rains caused by Harry Ken Aida flooded many streets in New York City. September 2, 2021, Reuters
+    <figcaption>Heavy rains caused by Hurricane Ida flooded many streets in New York City. September 2, 2021, Reuters
       </figcaption>
     <div class="content">
         <div class="header">
@@ -442,11 +479,20 @@
     <p>If another major disaster were to strike, it would inevitably put people’s lives at risk. 
       If people are still forced to live in illegal basements despite this reality, there is nothing more tragic.</p>
 
+    <section class="methodology">
+      <div class="methodology-line"></div>
+      <h2>Sources and methodology</h2>
+      <p>Using the “Illegal Basements” dataset from the New York City Department of Housing Preservation and Development (HPD), 
+        I obtained location data and details of violations for 1,653 illegal basement apartments that were cited between September 1, 2021—following Hurricane Ida’s landfall—and July 8, 2026.</p>
+      <p>I obtained data from the “Stormwater Flood Maps,” a flood hazard map published by the New York City Department of Environmental Protection (DEP) and overlaid it on the locations of the illegal basements.</p>
+      <p>Flooding areas were projected based on the following scenarios: ① Rainfall of approximately 2 inches per hour (10% annual probability of occurrence) at current sea level 
+        ② Approximately 2 inches of rainfall per hour (10% annual probability of occurrence) at the 2050 sea level, with sea levels projected to rise by up to 2.5 feet; and ③ Approximately 3.5 inches of rainfall per hour (a 1% annual probability of occurrence) at the 2080 sea level, with sea levels projected to rise by up to 4.8 feet.</p>
+    </section>
  
 </div>
      <div class="footer">
         <div class="content">
-            <p>GitHub repository is <a href="https://github.com/Kunihiro-Iwasaki/Project2.git">here</a>.</p>
+            <p>GitHub repository is <a href="https://github.com/Kunihiro-Iwasaki/Project_3.git">here</a>.</p>
         </div>
     </div>
 <script>
