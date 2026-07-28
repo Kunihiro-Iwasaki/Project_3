@@ -12,6 +12,6 @@
 ##### “Illegal Basements” https://data.cityofnewyork.us/Housing-Development/Illegal-Basements/mr3a-22rc/about_data
 ##### “Stormwater Flood Maps” https://data.cityofnewyork.us/Environment/NYC-Stormwater-Flood-Maps/9i7c-xyvv/about_data
 ## A section about what new skills, approaches, etc
-#### 
+#### I used GeoPandas to overlay vast amounts of polygon data and visualize it on a map. Since the charts created with GeoPandas did not look quite right, I converted them into a GeoPackage file, imported them into QGIS, and processed them there. With smartphone readability in mind, I used Illustrator to format the headings and annotations for the scrollable images.
 ## A section about things tried to do or wanted to do
-####
+#### It would have been ideal to interview residents actually living in illegal basement apartment and the families of those who lost their lives in Hurricane Ida. I searched for satellite imagery from before and after Ida but was unable to find suitable images that clearly showed the damage.
